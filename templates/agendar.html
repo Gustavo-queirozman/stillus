@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stillus</title>
+</head>
+
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+
+    <br><br>
+    <form action="{{ url_for('agendamento') }}" method="post">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div>
+                <div style="display: none;">
+                    <b>Dias disponíveis:</b>
+                    <div>
+                        <input type="date" name="date" class="formField" value="{{ date }}">
+                    </div>
+                </div>
+
+                <div>
+                    <br>
+                    <b>Horários disponíveis:</b>
+                    <div>
+                        <select class="formField" name="select-hour">
+                            {% for hour in hours: %}
+                            <option value="{{ hour }}">{% print(hour) %}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <b>Tipos de corte:</b>
+                    <div>
+                        <select class="formField" name="select-corte">
+                            <option value="Corte máquina - R$15,00">Corte máquina - R$15,00</option>
+                            <option value="Corte tesoura - R$18,00" selected>Corte tesoura - R$18,00</option>
+                            <option value="Degradê - R$18,00">Degradê - R$18,00</option>
+                            <option value="Corte máquina e Barba - R$30,00">Corte máquina e Barba - R$30,00</option>
+                            <option value="Corte tesoura e Barba - R$33,00" selected>Corte tesoura e Barba - R$33,00
+                            </option>
+                            <option value="Degradê e Barba - R$33,00">Degradê e Barba - R$33,00</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <input type="submit" value="Agendar" class="formField button">
+        </div>
+    </form>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .formField {
+            width: 200px;
+            height: 35px;
+        }
+
+        b {
+            font-family: 'gotham light';
+        }
+
+        .formField.button {
+            background-color: green;
+            border: 1px solid green;
+            border-radius: 5px;
+            color: white;
+
+        }
+    </style>
+</body>
+
+</html>

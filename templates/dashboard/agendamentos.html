@@ -1,0 +1,13 @@
+<body>
+    <ul>
+        {% for item in agendamento %}
+                <li>{{ item.id }}</li>
+                <li>{{ item.cliente }}</li>
+                <li>{{ item.data }}</li>
+                <li>{{ item.horario }}</li>
+                <li>{{ item.corte }}</li>
+            <a href="{{ url_for('delete', id=item.id) }}">Deletar</a>
+        {% endfor %}
+    </ul>
+
+</body>

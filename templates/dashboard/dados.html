@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--mandar dados do usuario para aqui
+atualizar dados
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="" method="post">
+        <div class="container">
+            <div style="display: none; flex-direction: column; margin: 10px">
+                <label for="">Nome</label>
+                <input type="text" name="name" class="formfield" value="{{ user.name }}">
+            </div>
+            <div style="display: flex; flex-direction: column; margin: 10px">
+                <label for="">Email</label>
+                <input type="text" name="email" class="formfield" value="{{ user.email }}">
+            </div>
+            <div style="display: none; flex-direction: column; margin: 10px">
+                <label for="">Celular</label>
+                <input type="text" name="cell" class="formfield" value="{{ user.cell }}">
+            </div>
+            <div style="display: flex; flex-direction: column; margin: 10px">
+                <label for="">Redefinir senha</label>
+                <input type="text" name="password" class="formfield">
+            </div>
+
+            <input type="submit" value="Atualizar" class="formfield btn">
+        </div>
+    </form>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'gotham medium';
+        }
+
+        html {
+            height: 100%;
+        }
+
+        label {
+            color: #4c5050;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .formfield {
+            height: 35px;
+            width: 220px;
+            border: none;
+            border-bottom: 1px solid #7e8484;
+            color: #4c5050;
+            font-family: 'gotham light';
+        }
+
+        .formfield.btn {
+            padding: 10px 10px;
+            background-color: blue;
+            border: 1px solid blue;
+            color: white;
+            border-radius: 5px;
+            font-family: 'gotham light';
+        }
+
+        textarea:focus,
+        input:focus,
+        select:focus {
+            box-shadow: 0 0 0 0;
+            border: 0 none;
+            outline: 0;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stillus</title>
+</head>
+
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+
+    <h1 style="text-align: center;">Agendamento</h1>
+    <br>
+    <form action="/agendar" method="POST">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div>
+                <b>Selecione a data:</b>
+                <div>
+                    <input type="date" name="date" class="formField">
+                </div>
+            </div>
+            <br>
+
+            <input type="submit" value="Continuar" class="formField button">
+        </div>
+    </form>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 {
+            font-family: 'gotham medium';
+        }
+
+        b {
+            font-family: 'gotham light';
+        }
+
+        .formField {
+            width: 200px;
+            height: 35px;
+        }
+
+        .formField.button {
+            background-color: green;
+            border: 1px solid green;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>Stillus</title>
+</head>
+
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+
+    <section id="inicio">
+        <img src="../static/images/home.png" alt="" class="img-inicio">
+    </section>
+
+    <section id="sobre">
+        <img src="../static/images/sobre_nos.png" alt="" class="img-sobre">
+    </section>
+
+    <section id="servicos">
+        <img src="../static/images/services.png" alt="" class="img-servicos">
+    </section>
+
+    <footer id="footer">
+        {% include 'footer.html' %}
+    </footer>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+
+        #inicio,
+        #sobre,
+        #servicos {
+            width: 100vw;
+        }
+
+        .img-inicio,
+        .img-sobre,
+        .img-servicos {
+            width: 100%;
+        }
+
+        .img-sobre,
+        .img-servicos {
+            margin-top: -5px;
+        }
+
+        #footer {
+            margin-top: -5px;
+        }
+    </style>
+</body>
+
+</html>

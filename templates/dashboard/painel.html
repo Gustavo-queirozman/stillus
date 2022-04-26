@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; width: 220px; ">
+            <a href="http://127.0.0.1:5000/dashboard/dados">
+                <div class="item">
+                    <img src="/static/images/dados.jpeg" alt="Dados">
+                    <strong>Meus dados</strong>
+                </div>
+            </a>
+
+            <a href="{{ url_for('agendamentos') }}">
+                <div class="item">
+                    <img src="/static/images/agendar.jpeg" alt="Agendar">
+                    <strong>Agendamentos</strong>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <style>
+        @font-face {
+            font-family: 'gotham medium';
+            src: url(../static/font/GOTHAM-MEDIUM.TTF);
+        }
+
+        @font-face {
+            font-family: 'gotham light';
+            src: url(../static/font/GOTHAM-LIGHT.TTF);
+        }
+
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        strong {
+            font-family: 'gotham medium';
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            border: 1px solid blue;
+            padding: 10px;
+            text-align: center;
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+
+</html>

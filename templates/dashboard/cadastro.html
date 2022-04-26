@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/style/styles.css">
+    <title>Stillus</title>
+</head>
+
+<body>
+    <div class="container__login">
+        <div class="formulario__login">
+            <h1 class="title">REGISTER</h1>
+            <br>
+            <form action="http://127.0.0.1:5000/dashboard/cadastro" method="POST">
+                <label>Nome</label>
+                <input class="formInput formField" type="text" name="name"><br>
+                <label>Email</label>
+                <input class="formInput formField" type="text" name="email"><br>
+                <label>Senha</label>
+                <input class="formInput formField" type="password" placeholder="***" name="password"><br>
+                <label>Celular</label>
+                <input class="formInput formField" type="text" name="cell"><br>
+                <input class="formInput button" type="submit" value="Cadastrar">
+            </form>
+
+            <div class="barra__inferior">
+                <span>Possui conta?</span>
+                <span> </span>
+                <a href="/dashboard"><label>Fazer Login</label></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

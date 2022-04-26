@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style/styles.css">
+    <title>Stillus</title>
+</head>
+
+<body>
+
+    <div class="container__login">
+        <div class="formulario__login">
+            <h1 class="title">LOGIN</h1>
+            <br>
+            <form action="{{ url_for('login') }}" method="POST">
+                <label>Email</label>
+                <input class="formInput formField" name="email" type="text"><br>
+                <label>Senha</label>
+                <input class="formInput formField" type="password" name="password" placeholder="***"><br>
+                <input class="formInput button" type="submit" value="Entrar">
+            </form>
+
+            <div class="barra__inferior">
+                <span>Não tem conta?</span>
+                <span> </span>
+                <a href="cadastro"><label>Cadastrar</label></a>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

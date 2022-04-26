@@ -1,0 +1,170 @@
+<div class="container-menu">
+    <div class="container-logo">
+        <img src="/static/images/logo.png" alt="" class="img-logo">
+    </div>
+
+    <div class="menu" style="z-index:1000;">
+        <img id="open-menu" src="../static/images/menu.png" alt="open menu" onClick="mostrar('exemplo1')">
+    </div>
+
+    {% if not current_user.is_authenticated %}
+    <ul class="hidden" id="exemplo1">
+        <a href="#inicio">
+            <li>Início</li>
+        </a>
+        <a href="#sobre">
+            <li>Sobre</li>
+        </a>
+        <a href="#servicos">
+            <li>Serviços</li>
+        </a>
+        <a href="login">
+            <li class="agendar">Agendar</li>
+        </a>
+    </ul>
+    {% else %}
+    <ul class="hidden" id="exemplo1">
+        <a href="{{ url_for('perfil') }}">
+            <li>Perfil</li>
+        </a>
+        <a href="{{ url_for('agendado') }}">
+            <li>Agendado</li>
+        </a>
+        <a href="{{ url_for('data') }}">
+            <li>Agendar</li>
+        </a>
+        <a href="{{ url_for('sair') }}">
+            <li class="agendar">Sair</li>
+        </a>
+    </ul>
+    {% endif %}
+
+</div>
+
+<style>
+    @font-face {
+        font-family: 'gotham medium';
+        src: url(../static/font/GOTHAM-MEDIUM.TTF);
+    }
+
+    @font-face {
+        font-family: 'gotham light';
+        src: url(../static/font/GOTHAM-LIGHT.TTF);
+    }
+
+    .formField {
+        border: none;
+        font-family: 'gotham light';
+        border-bottom: 1px solid #7e8484;
+    }
+
+    textarea:focus,
+    input:focus,
+    select:focus {
+        box-shadow: 0 0 0 0;
+        border: 0 none;
+        outline: 0;
+    }
+
+    .container-menu {
+        display: flex;
+        background-color: #B2B6B6;
+        font-family: 'gotham light';
+    }
+
+    .img-logo {
+        width: 170px;
+    }
+
+    .container-logo {
+        width: 100%;
+        padding: 0px 0px 0px 3%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    @media (max-width: 768px) {
+        .img-logo {
+            width: 100px;
+        }
+
+        ul {
+            position: fixed;
+            width: 50%;
+            background-color: white;
+            height: 100vh;
+            margin: 0px 0px 0px 50%;
+            padding-top: 40px;
+            z-index: 100;
+        }
+
+        ul li {
+            list-style: none;
+            margin: 0px 0px 10px;
+        }
+
+        ul {
+            display: none;
+        }
+
+        #close-menu {
+            display: none;
+        }
+
+        #close-menu {
+            padding: 5px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container-logo {
+            width: 100%;
+            padding: 0px 0px 0px 3%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        ul {
+            display: flex;
+            padding-right: 3%;
+            width: max-content;
+        }
+
+        ul li {
+            list-style: none;
+            margin: 0px 0px 0px 20px;
+            padding: 4px 7px;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .agendar {
+            border: 1px solid black;
+            border-radius: 15px;
+            background-color: black;
+            color: white;
+        }
+    }
+</style>
+
+<script>
+    function mostrar(id) {
+        if (document.getElementById(id).style.display !== "none") {
+            document.getElementById(id).style.display = "none";
+            return;
+        }
+        Array.from(document.getElementsByClassName("hidden")).forEach(
+            div => (div.style.display = "none")
+        );
+        document.getElementById(id).style.display = "block";
+    }
+</script>

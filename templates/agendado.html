@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--estilizar -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stillus</title>
+</head>
+
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+
+    <br><br>
+    <div class="container_agendado">
+        <div class="item">
+            <div style="display: flex;">
+                <div style="display: flex;">
+                    <label>Cliente:</label>
+                    <span>{{ cliente }}</span>
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <div style="display: flex; width: 220px; ">
+                    <label>Corte:</label>
+                    <span>{{ corte }}</span>
+                </div>
+            </div>
+
+            <div>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <label>Contato:</label>
+                        <span>{{ contato }}</span>
+                    </div>
+
+                    <div>
+                        <label>Horário:</label>
+                        <span>{{ horario }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+
+        .container_agendado {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .item {
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid #7e8484;
+            border-radius: 5px;
+            width: 300px;
+            align-items: center;
+            justify-content: center;
+            display: inline-block;
+        }
+
+        label {
+            font-family: 'gotham medium';
+        }
+
+        span {
+            font-family: 'gotham light';
+        }
+    </style>
+</body>
+
+</html>
